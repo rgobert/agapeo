@@ -1,3 +1,12 @@
+/* Variables CSS */
+:root {
+    --primary-color: #4F46E5;
+    --secondary-color: #E11D48;
+    --text-dark: #1e293b;
+    --text-light: #64748b;
+    --bg-light: #f8fafc;
+}
+
 /* Reset et styles de base */
 * {
     margin: 0;
@@ -797,20 +806,27 @@ a:focus-visible {
     border-color: var(--primary-color);
 }
 
-.contact-form button {
+.contact-form button,
+.btn-primary {
     padding: 15px 30px;
-    background: var(--primary-color);
+    background: var(--secondary-color);
     color: #fff;
     border: none;
     border-radius: 8px;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
 }
 
-.contact-form button:hover {
-    background: #E11D48;
+.contact-form button:hover,
+.btn-primary:hover {
+    background: #BE185D;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 25px rgba(225, 29, 72, 0.3);
 }
 
 /* Footer */
