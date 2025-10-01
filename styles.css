@@ -501,7 +501,8 @@ a:focus-visible {
 /* Section Piliers - Style Minimaliste */
 .pillars {
     padding: 120px 0;
-    background: #F9FAFB;
+    background: var(--bg-secondary);
+    transition: background-color var(--transition-speed);
 }
 
 .pillars h2 {
@@ -619,7 +620,8 @@ a:focus-visible {
 /* Section À propos - Style Minimaliste */
 .about {
     padding: 120px 0;
-    background: #F9FAFB;
+    background: var(--bg-secondary);
+    transition: background-color var(--transition-speed);
 }
 
 .about-content {
@@ -847,21 +849,22 @@ a:focus-visible {
 /* Section Contact */
 .contact {
     padding: 100px 0;
-    background: #f8fafc;
+    background: var(--bg-secondary);
+    transition: background-color var(--transition-speed);
 }
 
 .contact h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 20px;
-    color: #1e293b;
+    color: var(--text-primary);
 }
 
 .contact > .container > p {
     text-align: center;
     font-size: 1.2rem;
     margin-bottom: 60px;
-    color: #64748b;
+    color: var(--text-secondary);
 }
 
 .contact-content {
