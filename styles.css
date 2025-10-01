@@ -6,17 +6,22 @@
 :root {
     /* Couleurs principales */
     --primary-color: #4F46E5;
+    --primary-hover: #4338ca;
     --secondary-color: #E11D48;
+    --secondary-hover: #BE185D;
     
     /* Texte */
     --text-primary: #1e293b;
     --text-secondary: #64748b;
     --text-inverted: #ffffff;
+    --text-white: #ffffff;
     
     /* Arrière-plans */
     --bg-primary: #ffffff;
     --bg-secondary: #f8fafc;
     --bg-tertiary: #f1f5f9;
+    --bg-dark: #1e293b;
+    --bg-accent: #F7FAFC;
     
     /* Bordures et dividers */
     --border-color: #e2e8f0;
@@ -35,17 +40,22 @@
 [data-theme="dark"] {
     /* Couleurs principales (légèrement plus vives) */
     --primary-color: #6366f1;
+    --primary-hover: #818cf8;
     --secondary-color: #f43f5e;
+    --secondary-hover: #fb7185;
     
     /* Texte */
     --text-primary: #f1f5f9;
     --text-secondary: #cbd5e1;
     --text-inverted: #0f172a;
+    --text-white: #ffffff;
     
     /* Arrière-plans */
     --bg-primary: #0f172a;
     --bg-secondary: #1e293b;
     --bg-tertiary: #334155;
+    --bg-dark: #0f172a;
+    --bg-accent: #1e293b;
     
     /* Bordures et dividers */
     --border-color: #334155;
@@ -61,13 +71,18 @@
 @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
         --primary-color: #6366f1;
+        --primary-hover: #818cf8;
         --secondary-color: #f43f5e;
+        --secondary-hover: #fb7185;
         --text-primary: #f1f5f9;
         --text-secondary: #cbd5e1;
         --text-inverted: #0f172a;
+        --text-white: #ffffff;
         --bg-primary: #0f172a;
         --bg-secondary: #1e293b;
         --bg-tertiary: #334155;
+        --bg-dark: #0f172a;
+        --bg-accent: #1e293b;
         --border-color: #334155;
         --divider-color: #475569;
         --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -181,7 +196,7 @@ body {
 .counter {
     display: inline-block;
     font-weight: 700;
-    color: #E11D48;
+    color: var(--secondary-color);
     transition: transform 0.3s ease;
 }
 
@@ -222,7 +237,7 @@ button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 a:focus-visible {
-    outline: 2px solid #E11D48;
+    outline: 2px solid var(--secondary-color);
     outline-offset: 2px;
 }
 
@@ -277,7 +292,7 @@ a:focus-visible {
 }
 
 .coach-title {
-    color: #E11D48;
+    color: var(--secondary-color);
     font-size: 0.8rem;
     font-weight: 500;
     font-style: italic;
@@ -287,7 +302,7 @@ a:focus-visible {
 .agapeo-logo::before {
     content: "AGAPÈO";
     display: inline-block;
-    background: #E11D48;
+    background: var(--secondary-color);
     color: white;
     padding: 8px 12px;
     border-radius: 6px;
@@ -309,7 +324,7 @@ a:focus-visible {
 }
 
 .nav-menu a:hover {
-    color: #E11D48;
+    color: var(--secondary-color);
 }
 
 /* Contrôles de navigation (thème + menu mobile) */
@@ -425,27 +440,27 @@ a:focus-visible {
 }
 
 .btn-primary {
-    background: #E11D48;
-    color: #fff;
-    border: 2px solid #E11D48;
+    background: var(--secondary-color);
+    color: var(--text-white);
+    border: 2px solid var(--secondary-color);
 }
 
 .btn-primary:hover {
-    background: #BE185D;
-    border-color: #BE185D;
+    background: var(--secondary-hover);
+    border-color: var(--secondary-hover);
     transform: translateY(-1px);
     box-shadow: 0 8px 25px rgba(225, 29, 72, 0.3);
 }
 
 .btn-secondary {
     background: transparent;
-    color: #E11D48;
-    border: 2px solid #E11D48;
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
 }
 
 .btn-secondary:hover {
-    background: #E11D48;
-    color: #fff;
+    background: var(--secondary-color);
+    color: var(--text-white);
     transform: translateY(-1px);
     box-shadow: 0 8px 25px rgba(225, 29, 72, 0.3);
 }
@@ -463,7 +478,7 @@ a:focus-visible {
     border: none;
     box-shadow: 0 20px 60px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
-    background: #F7FAFC;
+    background: var(--bg-accent);
 }
 
 /* Fallback si l'image ne charge pas */
@@ -478,7 +493,7 @@ a:focus-visible {
     color: var(--text-secondary);
     font-size: 1rem;
     border-radius: 20px;
-    background: #F7FAFC;
+    background: var(--bg-accent);
 }
 
 .hero-photo:hover {
@@ -535,7 +550,7 @@ a:focus-visible {
 .pillar-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 25px 50px rgba(0,0,0,0.1);
-    border-color: #E11D48;
+    border-color: var(--secondary-color);
 }
 
 .pillar-icon {
@@ -594,7 +609,7 @@ a:focus-visible {
 .service-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-    border-color: #E11D48;
+    border-color: var(--secondary-color);
 }
 
 .service-icon {
@@ -663,13 +678,13 @@ a:focus-visible {
 }
 
 .credential:hover {
-    border-color: #E11D48;
+    border-color: var(--secondary-color);
     transform: translateY(-2px);
     box-shadow: 0 10px 25px rgba(0,0,0,0.05);
 }
 
 .credential strong {
-    color: #E11D48;
+    color: var(--secondary-color);
     font-size: 1.1rem;
     margin-bottom: 8px;
     font-weight: 600;
@@ -688,7 +703,7 @@ a:focus-visible {
     object-fit: cover;
     box-shadow: 0 25px 60px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
-    background: #F7FAFC;
+    background: var(--bg-accent);
     position: relative;
 }
 
@@ -701,7 +716,7 @@ a:focus-visible {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #64748b;
+    color: var(--text-secondary);
     font-size: 1rem;
     text-align: center;
     border-radius: 12px;
@@ -714,8 +729,8 @@ a:focus-visible {
 .about-image .placeholder-image {
     width: 400px;
     height: 400px;
-    background: #e2e8f0;
-    color: #64748b;
+    background: var(--border-color);
+    color: var(--text-secondary);
     border-radius: 12px;
 }
 
@@ -741,7 +756,7 @@ a:focus-visible {
 }
 
 .faq-item {
-    border-bottom: 1px solid #E2E8F0;
+    border-bottom: 1px solid var(--border-color);
     margin-bottom: 0;
 }
 
@@ -755,7 +770,7 @@ a:focus-visible {
 }
 
 .faq-question:hover {
-    color: #E11D48;
+    color: var(--secondary-color);
 }
 
 .faq-question h3 {
@@ -769,13 +784,13 @@ a:focus-visible {
 }
 
 .faq-question:hover h3 {
-    color: #E11D48;
+    color: var(--secondary-color);
 }
 
 .faq-toggle {
     font-size: 1.5rem;
     font-weight: 300;
-    color: #E11D48;
+    color: var(--secondary-color);
     transition: transform 0.3s ease;
     min-width: 30px;
     text-align: center;
@@ -807,8 +822,8 @@ a:focus-visible {
 /* Section Témoignages */
 .testimonials {
     padding: 100px 0;
-    background: #1e293b;
-    color: #fff;
+    background: var(--bg-dark);
+    color: var(--text-white);
 }
 
 .testimonials h2 {
@@ -886,22 +901,22 @@ a:focus-visible {
 }
 
 .contact-item strong {
-    color: #4F46E5;
+    color: var(--primary-color);
     font-size: 1.1rem;
 }
 
 .contact-item span {
-    color: #64748b;
+    color: var(--text-secondary);
 }
 
 .contact-item a {
-    color: #4F46E5;
+    color: var(--primary-color);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .contact-item a:hover {
-    color: #E11D48;
+    color: var(--secondary-color);
     text-decoration: underline;
 }
 
@@ -914,7 +929,7 @@ a:focus-visible {
 .contact-form input,
 .contact-form textarea {
     padding: 15px;
-    border: 2px solid #e2e8f0;
+    border: 2px solid var(--border-color);
     border-radius: 8px;
     font-family: inherit;
     font-size: 1rem;
@@ -931,7 +946,7 @@ a:focus-visible {
 .btn-primary {
     padding: 15px 30px;
     background: var(--secondary-color);
-    color: #fff;
+    color: var(--text-white);
     border: none;
     border-radius: 8px;
     font-size: 1rem;
@@ -945,15 +960,15 @@ a:focus-visible {
 
 .contact-form button:hover,
 .btn-primary:hover {
-    background: #BE185D;
+    background: var(--secondary-hover);
     transform: translateY(-1px);
     box-shadow: 0 8px 25px rgba(225, 29, 72, 0.3);
 }
 
 /* Footer */
 .footer {
-    background: #1e293b;
-    color: #fff;
+    background: var(--bg-dark);
+    color: var(--text-white);
     padding: 30px 0;
     text-align: center;
 }
