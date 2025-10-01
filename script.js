@@ -56,6 +56,7 @@ const Utils = {
 document.addEventListener('DOMContentLoaded', function() {
     
     // Initialiser tous les modules
+    ThemeModule.init();      // ⭐ Charger le thème en premier
     NavigationModule.init();
     FormModule.init();
     AnimationModule.init();
@@ -298,5 +299,88 @@ const FooterModule = {
         if (footerText) {
             footerText.textContent = footerText.textContent.replace(/\d{4}/, currentYear);
         }
+    }
+};
+
+// ========================================
+// MODULE THÈME - MODE SOMBRE
+// ========================================
+const ThemeModule = {
+    STORAGE_KEY: 'theme-preference',
+    
+    init() {
+        this.loadTheme();
+        this.attachEventListeners();
+        this.updateIcon();
+    },
+    
+    /**
+     * Charge le thème depuis localStorage ou détecte les préférences système
+     */
+    loadTheme() {
+        const savedTheme = localStorage.getItem(this.STORAGE_KEY);
+        
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        } else {
+            // Détecte les préférences système
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = prefersDark ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', theme);
+        }
+    },
+    
+    /**
+     * Change le thème actuel
+     */
+    toggleTheme() {
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem(this.STORAGE_KEY, newTheme);
+        
+        this.updateIcon();
+    },
+    
+    /**
+     * Met à jour l'icône du bouton selon le thème actuel
+     */
+    updateIcon() {
+        const themeIcon = document.querySelector('.theme-icon');
+        if (!themeIcon) return;
+        
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+        const isDark = currentTheme === 'dark';
+        
+        themeIcon.textContent = isDark ? '☀️' : '🌙';
+        
+        const themeToggle = document.querySelector('.theme-toggle');
+        if (themeToggle) {
+            themeToggle.setAttribute('aria-label', 
+                isDark ? 'Activer le mode clair' : 'Activer le mode sombre'
+            );
+        }
+    },
+    
+    /**
+     * Attache les événements
+     */
+    attachEventListeners() {
+        const themeToggle = document.querySelector('.theme-toggle');
+        
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => this.toggleTheme());
+        }
+        
+        // Écoute les changements de préférences système
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            const savedTheme = localStorage.getItem(this.STORAGE_KEY);
+            if (!savedTheme) {
+                const newTheme = e.matches ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', newTheme);
+                this.updateIcon();
+            }
+        });
     }
 };

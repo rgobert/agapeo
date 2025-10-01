@@ -1,10 +1,79 @@
-/* Variables CSS */
+/* ========================================
+   VARIABLES CSS - SYSTÈME DE THÈME
+   ======================================== */
+
+/* Mode Clair (par défaut) */
 :root {
+    /* Couleurs principales */
     --primary-color: #4F46E5;
     --secondary-color: #E11D48;
-    --text-dark: #1e293b;
-    --text-light: #64748b;
-    --bg-light: #f8fafc;
+    
+    /* Texte */
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --text-inverted: #ffffff;
+    
+    /* Arrière-plans */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8fafc;
+    --bg-tertiary: #f1f5f9;
+    
+    /* Bordures et dividers */
+    --border-color: #e2e8f0;
+    --divider-color: #cbd5e1;
+    
+    /* Ombres */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);
+    
+    /* Transitions */
+    --transition-speed: 0.3s;
+}
+
+/* Mode Sombre */
+[data-theme="dark"] {
+    /* Couleurs principales (légèrement plus vives) */
+    --primary-color: #6366f1;
+    --secondary-color: #f43f5e;
+    
+    /* Texte */
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --text-inverted: #0f172a;
+    
+    /* Arrière-plans */
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-tertiary: #334155;
+    
+    /* Bordures et dividers */
+    --border-color: #334155;
+    --divider-color: #475569;
+    
+    /* Ombres */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Détection automatique des préférences système */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --primary-color: #6366f1;
+        --secondary-color: #f43f5e;
+        --text-primary: #f1f5f9;
+        --text-secondary: #cbd5e1;
+        --text-inverted: #0f172a;
+        --bg-primary: #0f172a;
+        --bg-secondary: #1e293b;
+        --bg-tertiary: #334155;
+        --border-color: #334155;
+        --divider-color: #475569;
+        --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+        --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+        --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
 }
 
 /* Reset et styles de base */
@@ -17,7 +86,9 @@
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 
 /* Animations et micro-interactions */
@@ -163,8 +234,9 @@ a:focus-visible {
 
 /* Navigation */
 .navbar {
-    background: #fff;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    background: var(--bg-primary);
+    box-shadow: var(--shadow-md);
+    transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
     position: fixed;
     width: 100%;
     top: 0;
@@ -198,7 +270,7 @@ a:focus-visible {
 }
 
 .coach-name h2 {
-    color: #1A202C;
+    color: var(--text-primary);
     font-weight: 600;
     margin-bottom: 2px;
     font-size: 1.3rem;
@@ -231,13 +303,56 @@ a:focus-visible {
 
 .nav-menu a {
     text-decoration: none;
-    color: #333;
+    color: var(--text-primary);
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .nav-menu a:hover {
     color: #E11D48;
+}
+
+/* Contrôles de navigation (thème + menu mobile) */
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Bouton de toggle du thème */
+.theme-toggle {
+    background: transparent;
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+    font-size: 1.2rem;
+    padding: 0;
+}
+
+.theme-toggle:hover {
+    background: var(--bg-secondary);
+    border-color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+.theme-toggle:active {
+    transform: scale(0.95);
+}
+
+.theme-icon {
+    transition: transform var(--transition-speed);
+    display: inline-block;
+}
+
+/* Animation de rotation quand on change de thème */
+[data-theme="dark"] .theme-icon {
+    transform: rotate(180deg);
 }
 
 .hamburger {
@@ -249,20 +364,21 @@ a:focus-visible {
 .hamburger span {
     width: 25px;
     height: 3px;
-    background: #333;
+    background: var(--text-primary);
     margin: 3px 0;
     transition: 0.3s;
 }
 
 /* Section Hero - Approche Minimaliste */
 .hero {
-    background: #FEFEFE;
-    color: #2D3748;
+    background: var(--bg-primary);
+    color: var(--text-primary);
     padding: 140px 0 100px;
     min-height: 90vh;
     display: flex;
     align-items: center;
     position: relative;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 
 .hero-container {
@@ -280,14 +396,14 @@ a:focus-visible {
     font-weight: 300;
     margin-bottom: 30px;
     line-height: 1.3;
-    color: #1A202C;
+    color: var(--text-primary);
     letter-spacing: -0.02em;
 }
 
 .hero-content p {
     font-size: 1.3rem;
     margin-bottom: 40px;
-    color: #4A5568;
+    color: var(--text-secondary);
     line-height: 1.6;
     font-weight: 400;
     max-width: 600px;
@@ -359,7 +475,7 @@ a:focus-visible {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #4A5568;
+    color: var(--text-secondary);
     font-size: 1rem;
     border-radius: 20px;
     background: #F7FAFC;
@@ -393,7 +509,7 @@ a:focus-visible {
     font-size: 2.8rem;
     font-weight: 300;
     margin-bottom: 80px;
-    color: #1A202C;
+    color: var(--text-primary);
     letter-spacing: -0.02em;
 }
 
@@ -406,12 +522,12 @@ a:focus-visible {
 }
 
 .pillar-card {
-    background: #fff;
+    background: var(--bg-primary);
     padding: 50px 40px;
     border-radius: 16px;
     text-align: center;
-    transition: all 0.3s ease;
-    border: 1px solid #E2E8F0;
+    transition: all var(--transition-speed);
+    border: 1px solid var(--border-color);
     position: relative;
 }
 
@@ -431,11 +547,11 @@ a:focus-visible {
     font-size: 1.6rem;
     font-weight: 600;
     margin-bottom: 20px;
-    color: #1A202C;
+    color: var(--text-primary);
 }
 
 .pillar-card p {
-    color: #4A5568;
+    color: var(--text-secondary);
     line-height: 1.7;
     font-size: 1.05rem;
 }
@@ -443,7 +559,8 @@ a:focus-visible {
 /* Section Services - Style Minimaliste */
 .services {
     padding: 120px 0;
-    background: #fff;
+    background: var(--bg-primary);
+    transition: background-color var(--transition-speed);
 }
 
 .services h2 {
@@ -451,7 +568,7 @@ a:focus-visible {
     font-size: 2.8rem;
     font-weight: 300;
     margin-bottom: 80px;
-    color: #1A202C;
+    color: var(--text-primary);
     letter-spacing: -0.02em;
 }
 
@@ -464,12 +581,12 @@ a:focus-visible {
 }
 
 .service-card {
-    background: #fff;
+    background: var(--bg-primary);
     padding: 45px 35px;
     border-radius: 16px;
     text-align: left;
-    border: 1px solid #E2E8F0;
-    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-speed);
     position: relative;
 }
 
@@ -490,11 +607,11 @@ a:focus-visible {
     font-size: 1.6rem;
     font-weight: 600;
     margin-bottom: 18px;
-    color: #1A202C;
+    color: var(--text-primary);
 }
 
 .service-card p {
-    color: #4A5568;
+    color: var(--text-secondary);
     line-height: 1.7;
     font-size: 1.05rem;
 }
@@ -516,14 +633,14 @@ a:focus-visible {
     font-size: 2.8rem;
     font-weight: 300;
     margin-bottom: 40px;
-    color: #1A202C;
+    color: var(--text-primary);
     letter-spacing: -0.02em;
 }
 
 .about-text p {
     font-size: 1.2rem;
     margin-bottom: 25px;
-    color: #4A5568;
+    color: var(--text-secondary);
     line-height: 1.7;
 }
 
@@ -537,9 +654,9 @@ a:focus-visible {
     display: flex;
     flex-direction: column;
     padding: 25px;
-    background: #fff;
+    background: var(--bg-primary);
     border-radius: 12px;
-    border: 1px solid #E2E8F0;
+    border: 1px solid var(--border-color);
     transition: all 0.3s ease;
 }
 
@@ -557,7 +674,7 @@ a:focus-visible {
 }
 
 .credential span {
-    color: #4A5568;
+    color: var(--text-secondary);
     font-size: 0.95rem;
     line-height: 1.4;
 }
@@ -603,7 +720,8 @@ a:focus-visible {
 /* Section FAQ - Style Minimaliste */
 .faq {
     padding: 120px 0;
-    background: #fff;
+    background: var(--bg-primary);
+    transition: background-color var(--transition-speed);
 }
 
 .faq h2 {
@@ -611,7 +729,7 @@ a:focus-visible {
     font-size: 2.8rem;
     font-weight: 300;
     margin-bottom: 80px;
-    color: #1A202C;
+    color: var(--text-primary);
     letter-spacing: -0.02em;
 }
 
@@ -641,7 +759,7 @@ a:focus-visible {
 .faq-question h3 {
     font-size: 1.3rem;
     font-weight: 500;
-    color: #1A202C;
+    color: var(--text-primary);
     margin: 0;
     transition: color 0.3s ease;
     flex: 1;
@@ -678,7 +796,7 @@ a:focus-visible {
 }
 
 .faq-answer p {
-    color: #4A5568;
+    color: var(--text-secondary);
     line-height: 1.7;
     font-size: 1.05rem;
     margin: 0;
@@ -856,8 +974,25 @@ a:focus-visible {
     opacity: 1;
 }
 
+.privacy-badge {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    opacity: 0.8;
+    margin-top: 10px;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
+    .nav-controls {
+        gap: 15px;
+    }
+    
+    .theme-toggle {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
     .hamburger {
         display: flex;
     }

@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- Préchargement du thème (anti-flash) -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme-preference') || 
+                         (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    
     <!-- SEO Meta Tags -->
     <title>Agathe Vraïmakis - Coach Carrière Lyon | Reconversion & Bilan de Compétences</title>
     <meta name="description" content="Coach carrière certifiée ICF à Lyon. Spécialisée en reconversion professionnelle, bilan de compétences et évolution de carrière. Accompagnement personnalisé pour dirigeants et managers.">
@@ -161,10 +170,15 @@
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="nav-controls">
+                <button class="theme-toggle" aria-label="Basculer entre mode clair et sombre" title="Changer le thème">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </nav>
@@ -419,6 +433,9 @@
                     <img src="images/agapeo-logo.png" alt="Agapèo" class="footer-agapeo-logo">
                 </div>
                 <p>&copy; 2025 Agathe Vraïmakis - Agapèo. Tous droits réservés.</p>
+                <p class="privacy-badge">
+                    🍪 Ce site respecte votre vie privée : aucun cookie, aucun tracker, aucune collecte de données.
+                </p>
             </div>
         </div>
     </footer>
