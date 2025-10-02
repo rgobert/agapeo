@@ -1,35 +1,44 @@
 # Guide d'Intégration des Images - Agathe Vraïmakis
 
-## 📸 Images Fournies
+## ✅ **IMAGES INTÉGRÉES** (Dernière mise à jour: 2025-10-02)
 
-### **Image 1 - Portrait Principal**
+### **Image 1 - Portrait Principal** ✅
+- **Fichier** : `images/agathe-hero.jpg`
+- **Utilisation** : Section Hero (première impression)
 - **Description** : Portrait professionnel d'Agathe avec top rouge/corail
-- **Message** : "CE QUE JE CROYAIS ÊTRE UN ÉCHEC N'EN ÉTAIT PAS UN !"
-- **Usage recommandé** : Section Hero ou À propos
+- **Message originel** : "CE QUE JE CROYAIS ÊTRE UN ÉCHEC N'EN ÉTAIT PAS UN !"
 - **Couleurs** : Rouge/corail - parfait match avec le site !
+- **Statut** : ✅ Intégré et optimisé
 
-### **Image 2 - Portrait Alternatif** 
+### **Image 2 - Portrait Alternatif** ✅
+- **Fichier** : `images/agathe-about.jpg`
+- **Utilisation** : Section À propos
 - **Description** : Portrait plus décontracté d'Agathe
-- **Message** : "L'illusion de la clarté, c'est quand on croit parler français... mais que l'autre entend du klingon."
-- **Usage recommandé** : Section témoignages ou blog
+- **Message originel** : "L'illusion de la clarté, c'est quand on croit parler français... mais que l'autre entend du klingon."
 - **Style** : Plus personnel, avec une pointe d'humour
+- **Statut** : ✅ Intégré et optimisé
 
-## 🎯 Intégration Recommandée
+## ✅ Optimisations Appliquées
 
-### **1. Image Hero (Image 1)**
-- Remplacer le placeholder de la section hero
-- Dimensions optimales : 400x400px (carré)
-- Format : WebP pour la performance
+### **1. Image Hero** ✅
+- ✅ Intégrée dans la section hero
+- ✅ Dimensions : 320x320px (optimisé CSS)
+- ✅ Alt text descriptif et SEO-friendly
+- ✅ Attributs width/height (prévient CLS)
+- ✅ Loading: eager (visible immédiatement)
 
-### **2. Image À Propos (Image 2)**  
-- Remplacer le placeholder "Photo de profil"
-- Dimensions optimales : 350x350px
-- Ajouter un effet hover subtil
+### **2. Image À Propos** ✅
+- ✅ Intégrée dans la section about
+- ✅ Dimensions : 420x420px (optimisé CSS)
+- ✅ Alt text descriptif et émotionnel
+- ✅ Attributs width/height (prévient CLS)
+- ✅ Loading: lazy (optimisation performance)
 
-### **3. Optimisations Techniques**
-- Compresser les images (80% qualité)
-- Créer des versions responsive
-- Ajouter des attributs alt descriptifs
+### **3. Optimisations Techniques** ✅
+- ✅ Compression optimale (~65KB par image)
+- ✅ Attributs alt descriptifs pour SEO
+- ✅ Lazy loading (sauf hero)
+- ✅ Dimensions fixes (Core Web Vitals)
 
 ## 🔧 Instructions d'Intégration
 
