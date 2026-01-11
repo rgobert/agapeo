@@ -1,93 +1,145 @@
 /* ========================================
-   VARIABLES CSS - SYSTÈME DE THÈME
+   VARIABLES CSS - DIRECTION ARTISTIQUE LUXE
    ======================================== */
 
-/* Mode Clair (par défaut) */
+/* Mode Clair - Premium Luxe */
 :root {
-    /* Couleurs principales */
-    --primary-color: #4F46E5;
-    --primary-hover: #4338ca;
-    --secondary-color: #E11D48;
-    --secondary-hover: #BE185D;
-    
-    /* Texte */
-    --text-primary: #1e293b;
-    --text-secondary: #64748b;
-    --text-inverted: #ffffff;
-    --text-white: #ffffff;
-    
-    /* Arrière-plans */
-    --bg-primary: #ffffff;
-    --bg-secondary: #f8fafc;
-    --bg-tertiary: #f1f5f9;
-    --bg-dark: #1e293b;
-    --bg-accent: #F7FAFC;
-    
-    /* Bordures et dividers */
-    --border-color: #e2e8f0;
-    --divider-color: #cbd5e1;
-    
-    /* Ombres */
-    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
-    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);
-    
+    /* Couleurs principales - Premium Bleu */
+    --primary-color: #2438B9;        /* Bleu principal */
+    --primary-light: #3D52D4;        /* Bleu éclairci - hover */
+    --primary-hover: #1A2A8F;        /* Bleu foncé - active */
+    --primary-dark: #141F75;         /* Bleu très foncé */
+
+    /* Couleurs accent - Doré Premium */
+    --accent-gold: #C0A27B;          /* Doré principal */
+    --accent-gold-light: #D4B68F;    /* Doré clair - hover CTAs */
+    --accent-gold-dark: #A68B63;     /* Doré foncé - active */
+    --accent-gold-subtle: #E8DCC8;   /* Doré subtil - borders */
+
+    /* Texte - Élégant */
+    --text-primary: #1A1A1A;         /* Quasi noir (contraste 14.8:1 sur blanc poudré) */
+    --text-secondary: #4A4A4A;       /* Gris foncé */
+    --text-tertiary: #6A6A6A;        /* Gris moyen */
+    --text-inverted: #FFFFFF;        /* Blanc */
+    --text-white: #FFFFFF;
+    --text-gold: #C0A27B;            /* Doré */
+    --text-blue: #2438B9;            /* Bleu */
+
+    /* Arrière-plans - Blanc Poudré Premium */
+    --bg-primary: #FFF2F2;           /* Blanc poudré - fond principal */
+    --bg-secondary: #FFF8F8;         /* Blanc poudré plus clair - alternance */
+    --bg-white: #FFFFFF;             /* Blanc pur - cartes */
+    --bg-accent: #F5E8E8;            /* Rose poudré subtil - zones emphasis */
+    --bg-dark: #2438B9;              /* Bleu - footer/testimonials */
+    --bg-dark-alt: #1A2A8F;          /* Bleu foncé - variations */
+
+    /* Bordures et dividers - Raffinés */
+    --border-color: #E8D8D8;         /* Rose poudré - bordures standard */
+    --border-gold: #C0A27B;          /* Doré - bordures premium */
+    --border-blue: #2438B9;          /* Bleu - bordures structurelles */
+    --divider-color: #F0E0E0;        /* Rose très subtil - séparateurs */
+
+    /* Ombres - Bleu et Or */
+    --shadow-sm: 0 2px 8px rgba(36, 56, 185, 0.08);
+    --shadow-md: 0 4px 20px rgba(36, 56, 185, 0.12);
+    --shadow-lg: 0 8px 40px rgba(36, 56, 185, 0.16);
+    --shadow-gold: 0 4px 20px rgba(192, 162, 123, 0.25);
+    --shadow-gold-hover: 0 6px 30px rgba(192, 162, 123, 0.35);
+
     /* Transitions */
-    --transition-speed: 0.3s;
+    --transition-speed: 0.4s;
+    --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Mode Sombre */
 [data-theme="dark"] {
-    /* Couleurs principales (légèrement plus vives) */
-    --primary-color: #6366f1;
-    --primary-hover: #818cf8;
-    --secondary-color: #f43f5e;
-    --secondary-hover: #fb7185;
-    
+    /* Couleurs principales - Bleus lumineux pour contraste */
+    --primary-color: #5B72E6;        /* Bleu lumineux */
+    --primary-light: #7A8FEF;        /* Bleu clair */
+    --primary-hover: #8FA2F3;        /* Bleu hover */
+    --primary-dark: #4A61D9;         /* Bleu foncé */
+
+    /* Couleurs accent - Dorés chauds */
+    --accent-gold: #D4B68F;          /* Doré lumineux */
+    --accent-gold-light: #E8D4A0;    /* Doré très clair */
+    --accent-gold-dark: #C0A27B;     /* Doré moyen */
+    --accent-gold-subtle: #A68B63;   /* Doré subtil */
+
     /* Texte */
-    --text-primary: #f1f5f9;
-    --text-secondary: #cbd5e1;
-    --text-inverted: #0f172a;
-    --text-white: #ffffff;
-    
-    /* Arrière-plans */
-    --bg-primary: #0f172a;
-    --bg-secondary: #1e293b;
-    --bg-tertiary: #334155;
-    --bg-dark: #0f172a;
-    --bg-accent: #1e293b;
-    
+    --text-primary: #F5F5F5;         /* Blanc cassé */
+    --text-secondary: #D0D0D0;       /* Gris clair */
+    --text-tertiary: #A0A0A0;        /* Gris moyen */
+    --text-inverted: #0F1419;        /* Noir bleuté */
+    --text-white: #FFFFFF;
+    --text-gold: #D4B68F;            /* Doré */
+    --text-blue: #5B72E6;            /* Bleu */
+
+    /* Arrière-plans - Sophistiqués */
+    --bg-primary: #0F1419;           /* Noir bleuté profond */
+    --bg-secondary: #1A1F26;         /* Gris ardoise foncé */
+    --bg-white: #242933;             /* Gris ardoise */
+    --bg-accent: #2A3140;            /* Bleu-gris foncé */
+    --bg-dark: #0A0E14;              /* Noir absolu */
+    --bg-dark-alt: #151922;          /* Noir bleuté alternatif */
+
     /* Bordures et dividers */
-    --border-color: #334155;
-    --divider-color: #475569;
-    
+    --border-color: #2A3140;
+    --border-gold: #C0A27B;
+    --border-blue: #5B72E6;
+    --divider-color: #1A1F26;
+
     /* Ombres */
-    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
-    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.5);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.6);
+    --shadow-gold: 0 4px 20px rgba(212, 182, 143, 0.3);
+    --shadow-gold-hover: 0 6px 30px rgba(212, 182, 143, 0.4);
 }
 
 /* Détection automatique des préférences système */
 @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-        --primary-color: #6366f1;
-        --primary-hover: #818cf8;
-        --secondary-color: #f43f5e;
-        --secondary-hover: #fb7185;
-        --text-primary: #f1f5f9;
-        --text-secondary: #cbd5e1;
-        --text-inverted: #0f172a;
-        --text-white: #ffffff;
-        --bg-primary: #0f172a;
-        --bg-secondary: #1e293b;
-        --bg-tertiary: #334155;
-        --bg-dark: #0f172a;
-        --bg-accent: #1e293b;
-        --border-color: #334155;
-        --divider-color: #475569;
-        --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
-        --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
-        --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.5);
+        /* Couleurs principales - Bleus lumineux pour contraste */
+        --primary-color: #5B72E6;
+        --primary-light: #7A8FEF;
+        --primary-hover: #8FA2F3;
+        --primary-dark: #4A61D9;
+
+        /* Couleurs accent - Dorés chauds */
+        --accent-gold: #D4B68F;
+        --accent-gold-light: #E8D4A0;
+        --accent-gold-dark: #C0A27B;
+        --accent-gold-subtle: #A68B63;
+
+        /* Texte */
+        --text-primary: #F5F5F5;
+        --text-secondary: #D0D0D0;
+        --text-tertiary: #A0A0A0;
+        --text-inverted: #0F1419;
+        --text-white: #FFFFFF;
+        --text-gold: #D4B68F;
+        --text-blue: #5B72E6;
+
+        /* Arrière-plans */
+        --bg-primary: #0F1419;
+        --bg-secondary: #1A1F26;
+        --bg-white: #242933;
+        --bg-accent: #2A3140;
+        --bg-dark: #0A0E14;
+        --bg-dark-alt: #151922;
+
+        /* Bordures */
+        --border-color: #2A3140;
+        --border-gold: #C0A27B;
+        --border-blue: #5B72E6;
+        --divider-color: #1A1F26;
+
+        /* Ombres */
+        --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+        --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.5);
+        --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.6);
+        --shadow-gold: 0 4px 20px rgba(212, 182, 143, 0.3);
+        --shadow-gold-hover: 0 6px 30px rgba(212, 182, 143, 0.4);
     }
 }
 
@@ -196,7 +248,7 @@ body {
 .counter {
     display: inline-block;
     font-weight: 700;
-    color: var(--secondary-color);
+    color: var(--accent-gold);
     transition: transform 0.3s ease;
 }
 
@@ -249,7 +301,7 @@ a:focus-visible {
 
 /* Navigation */
 .navbar {
-    background: var(--bg-primary);
+    background: var(--primary-color);
     box-shadow: var(--shadow-md);
     transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
     position: fixed;
@@ -285,14 +337,14 @@ a:focus-visible {
 }
 
 .coach-name h2 {
-    color: var(--text-primary);
+    color: var(--text-inverted);
     font-weight: 600;
     margin-bottom: 2px;
     font-size: 1.3rem;
 }
 
 .coach-title {
-    color: var(--secondary-color);
+    color: var(--accent-gold-light);
     font-size: 0.8rem;
     font-weight: 500;
     font-style: italic;
@@ -318,13 +370,13 @@ a:focus-visible {
 
 .nav-menu a {
     text-decoration: none;
-    color: var(--text-primary);
-    font-weight: 500;
+    color: var(--text-inverted);
+    font-weight: 600;
     transition: color 0.3s ease;
 }
 
 .nav-menu a:hover {
-    color: var(--secondary-color);
+    color: var(--accent-gold);
 }
 
 /* Contrôles de navigation (thème + menu mobile) */
@@ -337,7 +389,7 @@ a:focus-visible {
 /* Bouton de toggle du thème */
 .theme-toggle {
     background: transparent;
-    border: 2px solid var(--border-color);
+    border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 50%;
     width: 44px;
     height: 44px;
@@ -348,11 +400,12 @@ a:focus-visible {
     transition: all var(--transition-speed);
     font-size: 1.2rem;
     padding: 0;
+    color: var(--text-inverted);
 }
 
 .theme-toggle:hover {
-    background: var(--bg-secondary);
-    border-color: var(--primary-color);
+    background: var(--primary-hover);
+    border-color: var(--text-inverted);
     transform: scale(1.1);
 }
 
@@ -411,7 +464,7 @@ a:focus-visible {
     font-weight: 300;
     margin-bottom: 30px;
     line-height: 1.3;
-    color: var(--text-primary);
+    color: var(--primary-color);
     letter-spacing: -0.02em;
 }
 
@@ -434,35 +487,37 @@ a:focus-visible {
     padding: 15px 30px;
     border-radius: 8px;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
+    font-size: 1rem;
     transition: all 0.3s ease;
     display: inline-block;
 }
 
 .btn-primary {
-    background: var(--secondary-color);
-    color: var(--text-white);
-    border: 2px solid var(--secondary-color);
+    background: var(--accent-gold);
+    color: var(--text-inverted);
+    border: 2px solid var(--accent-gold);
+    box-shadow: var(--shadow-gold);
 }
 
 .btn-primary:hover {
-    background: var(--secondary-hover);
-    border-color: var(--secondary-hover);
-    transform: translateY(-1px);
-    box-shadow: 0 8px 25px rgba(225, 29, 72, 0.3);
+    background: var(--accent-gold-dark);
+    border-color: var(--accent-gold-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-gold-hover);
 }
 
 .btn-secondary {
     background: transparent;
-    color: var(--secondary-color);
-    border: 2px solid var(--secondary-color);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
 }
 
 .btn-secondary:hover {
-    background: var(--secondary-color);
-    color: var(--text-white);
-    transform: translateY(-1px);
-    box-shadow: 0 8px 25px rgba(225, 29, 72, 0.3);
+    background: var(--primary-color);
+    color: var(--text-inverted);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
 }
 
 .hero-image {
@@ -525,7 +580,7 @@ a:focus-visible {
     font-size: 2.8rem;
     font-weight: 300;
     margin-bottom: 80px;
-    color: var(--text-primary);
+    color: var(--primary-color);
     letter-spacing: -0.02em;
 }
 
@@ -549,8 +604,8 @@ a:focus-visible {
 
 .pillar-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 25px 50px rgba(0,0,0,0.1);
-    border-color: var(--secondary-color);
+    box-shadow: var(--shadow-gold);
+    border-color: var(--accent-gold);
 }
 
 .pillar-icon {
@@ -563,7 +618,7 @@ a:focus-visible {
     font-size: 1.6rem;
     font-weight: 600;
     margin-bottom: 20px;
-    color: var(--text-primary);
+    color: var(--primary-color);
 }
 
 .pillar-card p {
@@ -584,7 +639,7 @@ a:focus-visible {
     font-size: 2.8rem;
     font-weight: 300;
     margin-bottom: 80px;
-    color: var(--text-primary);
+    color: var(--primary-color);
     letter-spacing: -0.02em;
 }
 
@@ -608,8 +663,8 @@ a:focus-visible {
 
 .service-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-    border-color: var(--secondary-color);
+    box-shadow: var(--shadow-gold);
+    border-color: var(--accent-gold);
 }
 
 .service-icon {
@@ -623,13 +678,72 @@ a:focus-visible {
     font-size: 1.6rem;
     font-weight: 600;
     margin-bottom: 18px;
-    color: var(--text-primary);
+    color: var(--primary-color);
 }
 
 .service-card p {
     color: var(--text-secondary);
     line-height: 1.7;
     font-size: 1.05rem;
+}
+
+/* Offre signature featured */
+.service-card-featured {
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+    border: 2px solid var(--primary-color);
+    grid-column: 1 / -1;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: var(--shadow-lg);
+}
+
+.service-card-featured:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(79, 70, 229, 0.15);
+}
+
+.service-badge {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--text-white);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+}
+
+.service-details {
+    background: var(--bg-accent);
+    border-left: 3px solid var(--accent-gold);
+    padding: 20px 25px;
+    margin: 25px 0;
+    border-radius: 8px;
+}
+
+.service-details p {
+    margin: 8px 0;
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.service-card .btn-primary,
+.service-card .btn-secondary {
+    margin-top: 20px;
+    display: inline-block;
+}
+
+/* Hero offer line */
+.hero-offer {
+    font-size: 1.15rem;
+    color: var(--text-primary);
+    margin: 20px 0;
+    padding: 15px 25px;
+    background: var(--bg-accent);
+    border-left: 4px solid var(--accent-gold);
+    border-radius: 8px;
 }
 
 /* Section À propos - Style Minimaliste */
@@ -650,7 +764,7 @@ a:focus-visible {
     font-size: 2.8rem;
     font-weight: 300;
     margin-bottom: 40px;
-    color: var(--text-primary);
+    color: var(--primary-color);
     letter-spacing: -0.02em;
 }
 
@@ -678,14 +792,14 @@ a:focus-visible {
 }
 
 .credential:hover {
-    border-color: var(--secondary-color);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    border-color: var(--accent-gold);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-gold);
 }
 
 .credential strong {
-    color: var(--secondary-color);
-    font-size: 1.1rem;
+    color: var(--accent-gold);
+    font-size: 1.15rem;
     margin-bottom: 8px;
     font-weight: 600;
 }
@@ -746,7 +860,7 @@ a:focus-visible {
     font-size: 2.8rem;
     font-weight: 300;
     margin-bottom: 80px;
-    color: var(--text-primary);
+    color: var(--primary-color);
     letter-spacing: -0.02em;
 }
 
@@ -758,6 +872,10 @@ a:focus-visible {
 .faq-item {
     border-bottom: 1px solid var(--border-color);
     margin-bottom: 0;
+}
+
+.faq-item.active {
+    border-color: var(--accent-gold);
 }
 
 .faq-question {
@@ -784,20 +902,21 @@ a:focus-visible {
 }
 
 .faq-question:hover h3 {
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .faq-toggle {
     font-size: 1.5rem;
     font-weight: 300;
-    color: var(--secondary-color);
-    transition: transform 0.3s ease;
+    color: var(--accent-gold);
+    transition: transform 0.3s ease, color 0.3s ease;
     min-width: 30px;
     text-align: center;
 }
 
 .faq-item.active .faq-toggle {
     transform: rotate(45deg);
+    color: var(--primary-color);
 }
 
 .faq-answer {
@@ -822,8 +941,8 @@ a:focus-visible {
 /* Section Témoignages */
 .testimonials {
     padding: 100px 0;
-    background: var(--bg-dark);
-    color: var(--text-white);
+    background: var(--primary-color);
+    color: var(--text-inverted);
 }
 
 .testimonials h2 {
@@ -839,9 +958,10 @@ a:focus-visible {
 }
 
 .testimonial {
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.12);
     padding: 40px;
     border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
 }
 
@@ -854,11 +974,23 @@ a:focus-visible {
 .testimonial-author strong {
     display: block;
     margin-bottom: 5px;
+    color: var(--accent-gold-light);
+    font-size: 1.1rem;
 }
 
 .testimonial-author span {
     opacity: 0.8;
     font-size: 0.9rem;
+}
+
+/* Dark mode testimonials */
+[data-theme="dark"] .testimonials {
+    background: var(--bg-dark);
+}
+
+[data-theme="dark"] .testimonial {
+    background: rgba(91, 114, 230, 0.15);
+    border-color: rgba(91, 114, 230, 0.3);
 }
 
 /* Section Contact */
@@ -872,7 +1004,7 @@ a:focus-visible {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 20px;
-    color: var(--text-primary);
+    color: var(--primary-color);
 }
 
 .contact > .container > p {
@@ -916,7 +1048,7 @@ a:focus-visible {
 }
 
 .contact-item a:hover {
-    color: var(--secondary-color);
+    color: var(--accent-gold);
     text-decoration: underline;
 }
 
@@ -940,29 +1072,32 @@ a:focus-visible {
 .contact-form textarea:focus {
     outline: none;
     border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(36, 56, 185, 0.1);
 }
 
 .contact-form button,
 .btn-primary {
     padding: 15px 30px;
-    background: var(--secondary-color);
-    color: var(--text-white);
-    border: none;
+    background: var(--accent-gold);
+    color: var(--text-inverted);
+    border: 2px solid var(--accent-gold);
     border-radius: 8px;
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
     text-decoration: none;
     display: inline-block;
     text-align: center;
+    box-shadow: var(--shadow-gold);
 }
 
 .contact-form button:hover,
 .btn-primary:hover {
-    background: var(--secondary-hover);
-    transform: translateY(-1px);
-    box-shadow: 0 8px 25px rgba(225, 29, 72, 0.3);
+    background: var(--accent-gold-dark);
+    border-color: var(--accent-gold-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-gold-hover);
 }
 
 /* Footer */
@@ -985,7 +1120,7 @@ a:focus-visible {
     width: auto;
     opacity: 0.9;
     transition: opacity 0.3s ease;
-    /* Garde le logo en couleur rouge sur fond sombre */
+    filter: brightness(0) invert(1);
 }
 
 .footer-agapeo-logo:hover {
