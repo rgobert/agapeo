@@ -1,93 +1,186 @@
 /* ========================================
-   VARIABLES CSS - SYSTÈME DE THÈME
+   VARIABLES CSS - DIRECTION ARTISTIQUE LUXE
    ======================================== */
 
-/* Mode Clair (par défaut) */
+/* Mode Clair - Premium Luxe */
 :root {
-    /* Couleurs principales */
-    --primary-color: #4F46E5;
-    --primary-hover: #4338ca;
-    --secondary-color: #E11D48;
-    --secondary-hover: #BE185D;
-    
-    /* Texte */
-    --text-primary: #1e293b;
-    --text-secondary: #64748b;
-    --text-inverted: #ffffff;
-    --text-white: #ffffff;
-    
-    /* Arrière-plans */
-    --bg-primary: #ffffff;
-    --bg-secondary: #f8fafc;
-    --bg-tertiary: #f1f5f9;
-    --bg-dark: #1e293b;
-    --bg-accent: #F7FAFC;
-    
-    /* Bordures et dividers */
-    --border-color: #e2e8f0;
-    --divider-color: #cbd5e1;
-    
-    /* Ombres */
-    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
-    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);
-    
+    /* Couleurs principales - Premium Bleu */
+    --primary-color: #2438B9;        /* Bleu principal */
+    --primary-light: #3D52D4;        /* Bleu éclairci - hover */
+    --primary-hover: #1A2A8F;        /* Bleu foncé - active */
+    --primary-dark: #141F75;         /* Bleu très foncé */
+
+    /* Couleurs accent - Doré Premium */
+    --accent-gold: #C0A27B;          /* Doré principal */
+    --accent-gold-light: #D4B68F;    /* Doré clair - hover CTAs */
+    --accent-gold-dark: #A68B63;     /* Doré foncé - active */
+    --accent-gold-subtle: #E8DCC8;   /* Doré subtil - borders */
+
+    /* Texte - Élégant */
+    --text-primary: #1A1A1A;         /* Quasi noir (contraste 14.8:1 sur blanc poudré) */
+    --text-secondary: #4A4A4A;       /* Gris foncé */
+    --text-tertiary: #6A6A6A;        /* Gris moyen */
+    --text-inverted: #FFFFFF;        /* Blanc */
+    --text-white: #FFFFFF;
+    --text-gold: #C0A27B;            /* Doré */
+    --text-blue: #2438B9;            /* Bleu */
+
+    /* Arrière-plans - Blanc Poudré Premium */
+    --bg-primary: #FFF2F2;           /* Blanc poudré - fond principal */
+    --bg-secondary: #FFF8F8;         /* Blanc poudré plus clair - alternance */
+    --bg-white: #FFFFFF;             /* Blanc pur - cartes */
+    --bg-accent: #F5E8E8;            /* Rose poudré subtil - zones emphasis */
+    --bg-dark: #2438B9;              /* Bleu - footer/testimonials */
+    --bg-dark-alt: #1A2A8F;          /* Bleu foncé - variations */
+
+    /* Bordures et dividers - Raffinés */
+    --border-color: #E8D8D8;         /* Rose poudré - bordures standard */
+    --border-gold: #C0A27B;          /* Doré - bordures premium */
+    --border-blue: #2438B9;          /* Bleu - bordures structurelles */
+    --divider-color: #F0E0E0;        /* Rose très subtil - séparateurs */
+
+    /* Ombres - Bleu et Or */
+    --shadow-sm: 0 2px 8px rgba(36, 56, 185, 0.08);
+    --shadow-md: 0 4px 20px rgba(36, 56, 185, 0.12);
+    --shadow-lg: 0 8px 40px rgba(36, 56, 185, 0.16);
+    --shadow-gold: 0 4px 20px rgba(192, 162, 123, 0.25);
+    --shadow-gold-hover: 0 6px 30px rgba(192, 162, 123, 0.35);
+
+    /* Spacing Scale (8px base) */
+    --space-xs: 0.5rem;      /* 8px */
+    --space-sm: 1rem;        /* 16px */
+    --space-md: 1.5rem;      /* 24px */
+    --space-lg: 2rem;        /* 32px */
+    --space-xl: 3rem;        /* 48px */
+    --space-2xl: 4rem;       /* 64px */
+    --space-3xl: 6rem;       /* 96px */
+    --space-4xl: 8rem;       /* 128px */
+
+    /* Semantic Spacing */
+    --section-padding-y: var(--space-4xl);     /* 128px desktop */
+    --section-padding-x: var(--space-lg);      /* 32px */
+    --card-padding: var(--space-lg);           /* 32px */
+    --container-max-width: 1200px;
+
+    /* Border Radius */
+    --radius-sm: 8px;      /* Inputs, small buttons */
+    --radius-md: 12px;     /* Cards, main buttons */
+    --radius-lg: 16px;     /* Featured cards, hero elements */
+    --radius-xl: 24px;     /* Special containers */
+    --radius-round: 50%;   /* Avatars, icons */
+
+    /* Fluid Typography */
+    --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+    --text-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+    --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.0625rem);
+    --text-lg: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
+    --text-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+    --text-2xl: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+    --text-3xl: clamp(2rem, 1.6rem + 2vw, 2.75rem);
+    --text-4xl: clamp(2.5rem, 2rem + 2.5vw, 3.5rem);
+
     /* Transitions */
-    --transition-speed: 0.3s;
+    --transition-speed: 0.4s;
+    --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Mode Sombre */
 [data-theme="dark"] {
-    /* Couleurs principales (légèrement plus vives) */
-    --primary-color: #6366f1;
-    --primary-hover: #818cf8;
-    --secondary-color: #f43f5e;
-    --secondary-hover: #fb7185;
-    
+    /* Couleurs principales - Bleus lumineux pour contraste */
+    --primary-color: #5B72E6;        /* Bleu lumineux */
+    --primary-light: #7A8FEF;        /* Bleu clair */
+    --primary-hover: #8FA2F3;        /* Bleu hover */
+    --primary-dark: #4A61D9;         /* Bleu foncé */
+
+    /* Couleurs accent - Dorés chauds */
+    --accent-gold: #D4B68F;          /* Doré lumineux */
+    --accent-gold-light: #E8D4A0;    /* Doré très clair */
+    --accent-gold-dark: #C0A27B;     /* Doré moyen */
+    --accent-gold-subtle: #A68B63;   /* Doré subtil */
+
     /* Texte */
-    --text-primary: #f1f5f9;
-    --text-secondary: #cbd5e1;
-    --text-inverted: #0f172a;
-    --text-white: #ffffff;
-    
-    /* Arrière-plans */
-    --bg-primary: #0f172a;
-    --bg-secondary: #1e293b;
-    --bg-tertiary: #334155;
-    --bg-dark: #0f172a;
-    --bg-accent: #1e293b;
-    
+    --text-primary: #F5F5F5;         /* Blanc cassé */
+    --text-secondary: #D0D0D0;       /* Gris clair */
+    --text-tertiary: #A0A0A0;        /* Gris moyen */
+    --text-inverted: #0F1419;        /* Noir bleuté */
+    --text-white: #FFFFFF;
+    --text-gold: #D4B68F;            /* Doré */
+    --text-blue: #5B72E6;            /* Bleu */
+
+    /* Arrière-plans - Sophistiqués */
+    --bg-primary: #0F1419;           /* Noir bleuté profond */
+    --bg-secondary: #1A1F26;         /* Gris ardoise foncé */
+    --bg-white: #242933;             /* Gris ardoise */
+    --bg-accent: #2A3140;            /* Bleu-gris foncé */
+    --bg-dark: #0A0E14;              /* Noir absolu */
+    --bg-dark-alt: #151922;          /* Noir bleuté alternatif */
+
     /* Bordures et dividers */
-    --border-color: #334155;
-    --divider-color: #475569;
-    
+    --border-color: #2A3140;
+    --border-gold: #C0A27B;
+    --border-blue: #5B72E6;
+    --divider-color: #1A1F26;
+
     /* Ombres */
-    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
-    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.5);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.6);
+    --shadow-gold: 0 4px 20px rgba(212, 182, 143, 0.3);
+    --shadow-gold-hover: 0 6px 30px rgba(212, 182, 143, 0.4);
 }
 
 /* Détection automatique des préférences système */
 @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-        --primary-color: #6366f1;
-        --primary-hover: #818cf8;
-        --secondary-color: #f43f5e;
-        --secondary-hover: #fb7185;
-        --text-primary: #f1f5f9;
-        --text-secondary: #cbd5e1;
-        --text-inverted: #0f172a;
-        --text-white: #ffffff;
-        --bg-primary: #0f172a;
-        --bg-secondary: #1e293b;
-        --bg-tertiary: #334155;
-        --bg-dark: #0f172a;
-        --bg-accent: #1e293b;
-        --border-color: #334155;
-        --divider-color: #475569;
-        --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
-        --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
-        --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.5);
+        /* Couleurs principales - Bleus lumineux pour contraste */
+        --primary-color: #5B72E6;
+        --primary-light: #7A8FEF;
+        --primary-hover: #8FA2F3;
+        --primary-dark: #4A61D9;
+
+        /* Couleurs accent - Dorés chauds */
+        --accent-gold: #D4B68F;
+        --accent-gold-light: #E8D4A0;
+        --accent-gold-dark: #C0A27B;
+        --accent-gold-subtle: #A68B63;
+
+        /* Texte */
+        --text-primary: #F5F5F5;
+        --text-secondary: #D0D0D0;
+        --text-tertiary: #A0A0A0;
+        --text-inverted: #0F1419;
+        --text-white: #FFFFFF;
+        --text-gold: #D4B68F;
+        --text-blue: #5B72E6;
+
+        /* Arrière-plans */
+        --bg-primary: #0F1419;
+        --bg-secondary: #1A1F26;
+        --bg-white: #242933;            /* Cards plus visibles */
+        --bg-accent: #2A3140;           /* Différenciation claire */
+        --bg-dark: #0A0E14;
+        --bg-dark-alt: #151922;
+
+        /* Bordures */
+        --border-color: #2A3140;        /* Plus clair pour visibilité */
+        --border-gold: #C0A27B;         /* Doré visible */
+        --border-blue: #5B72E6;         /* Bleu lumineux */
+        --divider-color: #3A4150;       /* Plus contrasté */
+
+        /* Ombres */
+        --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+        --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
+        --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.5);
+        --shadow-gold: 0 4px 20px rgba(212, 182, 143, 0.25);
+        --shadow-gold-hover: 0 6px 30px rgba(212, 182, 143, 0.35);
+    }
+}
+
+/* Responsive Spacing Adjustments */
+@media (max-width: 768px) {
+    :root {
+        --section-padding-y: var(--space-3xl);  /* 96px mobile */
+        --section-padding-x: var(--space-md);   /* 24px */
     }
 }
 
@@ -104,6 +197,67 @@ body {
     color: var(--text-primary);
     background-color: var(--bg-primary);
     transition: background-color var(--transition-speed), color var(--transition-speed);
+    font-size: 1.0625rem;
+    font-feature-settings: 'liga' 1, 'kern' 1, 'calt' 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* === TYPOGRAPHY HIERARCHY === */
+h1, h2, h3, h4 {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-primary);
+    margin: 0;
+    line-height: 1.2;
+    font-feature-settings: 'liga' 1, 'kern' 1;
+    letter-spacing: -0.02em;
+}
+
+h1 {
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--primary-color);
+}
+
+h2 {
+    font-size: var(--text-3xl);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: var(--text-xl);
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+}
+
+h4 {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--text-secondary);
+}
+
+p {
+    font-size: var(--text-base);
+    line-height: 1.7;
+    color: var(--text-primary);
+    margin-bottom: 1.25rem;
+    font-feature-settings: 'liga' 1, 'kern' 1;
+}
+
+.lead {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    font-weight: 400;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
 }
 
 /* Animations et micro-interactions */
@@ -196,7 +350,11 @@ body {
 .counter {
     display: inline-block;
     font-weight: 700;
-    color: var(--secondary-color);
+    color: var(--accent-gold);
+    font-size: var(--text-4xl);
+    font-variant-numeric: tabular-nums lining-nums;
+    font-feature-settings: 'tnum' 1, 'lnum' 1;
+    letter-spacing: -0.05em;
     transition: transform 0.3s ease;
 }
 
@@ -237,8 +395,9 @@ button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 a:focus-visible {
-    outline: 2px solid var(--secondary-color);
-    outline-offset: 2px;
+    outline: 2px solid var(--primary-color);
+    outline-offset: 4px;
+    border-radius: 4px;
 }
 
 .container {
@@ -249,7 +408,7 @@ a:focus-visible {
 
 /* Navigation */
 .navbar {
-    background: var(--bg-primary);
+    background: var(--primary-color);
     box-shadow: var(--shadow-md);
     transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
     position: fixed;
@@ -285,14 +444,14 @@ a:focus-visible {
 }
 
 .coach-name h2 {
-    color: var(--text-primary);
+    color: var(--text-inverted);
     font-weight: 600;
     margin-bottom: 2px;
     font-size: 1.3rem;
 }
 
 .coach-title {
-    color: var(--secondary-color);
+    color: var(--accent-gold-light);
     font-size: 0.8rem;
     font-weight: 500;
     font-style: italic;
@@ -302,10 +461,10 @@ a:focus-visible {
 .agapeo-logo::before {
     content: "AGAPÈO";
     display: inline-block;
-    background: var(--secondary-color);
+    background: var(--primary-color);
     color: white;
     padding: 8px 12px;
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
     font-weight: 700;
     font-size: 0.9rem;
 }
@@ -318,13 +477,13 @@ a:focus-visible {
 
 .nav-menu a {
     text-decoration: none;
-    color: var(--text-primary);
-    font-weight: 500;
+    color: var(--text-inverted);
+    font-weight: 600;
     transition: color 0.3s ease;
 }
 
 .nav-menu a:hover {
-    color: var(--secondary-color);
+    color: var(--accent-gold);
 }
 
 /* Contrôles de navigation (thème + menu mobile) */
@@ -337,7 +496,7 @@ a:focus-visible {
 /* Bouton de toggle du thème */
 .theme-toggle {
     background: transparent;
-    border: 2px solid var(--border-color);
+    border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 50%;
     width: 44px;
     height: 44px;
@@ -345,15 +504,16 @@ a:focus-visible {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all var(--transition-speed);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
     font-size: 1.2rem;
     padding: 0;
+    color: var(--text-inverted);
 }
 
 .theme-toggle:hover {
-    background: var(--bg-secondary);
-    border-color: var(--primary-color);
-    transform: scale(1.1);
+    background: var(--primary-hover);
+    border-color: var(--text-inverted);
+    transform: scale(1.1) rotate(180deg);
 }
 
 .theme-toggle:active {
@@ -379,16 +539,57 @@ a:focus-visible {
 .hamburger span {
     width: 25px;
     height: 3px;
-    background: var(--text-primary);
+    background: var(--text-inverted);
     margin: 3px 0;
     transition: 0.3s;
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background: var(--primary-color);
+        width: 100%;
+        text-align: center;
+        transition: left 0.3s ease;
+        box-shadow: var(--shadow-lg);
+        padding: 2rem 0;
+        gap: 0;
+        z-index: 999;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu li {
+        margin: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: 1.25rem 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    .hamburger {
+        display: flex;
+    }
 }
 
 /* Section Hero - Approche Minimaliste */
 .hero {
     background: var(--bg-primary);
     color: var(--text-primary);
-    padding: 140px 0 100px;
+    padding: calc(var(--section-padding-y) * 1.5) var(--section-padding-x);
     min-height: 90vh;
     display: flex;
     align-items: center;
@@ -407,12 +608,7 @@ a:focus-visible {
 }
 
 .hero-content h1 {
-    font-size: 3.2rem;
-    font-weight: 300;
     margin-bottom: 30px;
-    line-height: 1.3;
-    color: var(--text-primary);
-    letter-spacing: -0.02em;
 }
 
 .hero-content p {
@@ -432,37 +628,87 @@ a:focus-visible {
 
 .btn-primary, .btn-secondary {
     padding: 15px 30px;
-    border-radius: 8px;
+    border-radius: var(--radius-md);
     text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
+    font-weight: 700;
+    font-size: 1.125rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: inline-block;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* Ripple effect au clic */
+.btn-primary::after,
+.btn-secondary::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+    opacity: 0;
+    transform: scale(0);
+    transition: transform 0.5s, opacity 0.3s;
+    pointer-events: none;
+}
+
+.btn-primary:active::after,
+.btn-secondary:active::after {
+    transform: scale(2);
+    opacity: 1;
+    transition: transform 0s, opacity 0s;
 }
 
 .btn-primary {
-    background: var(--secondary-color);
-    color: var(--text-white);
-    border: 2px solid var(--secondary-color);
+    background: var(--accent-gold);
+    color: var(--text-inverted);
+    border: 2px solid var(--accent-gold);
+    box-shadow: var(--shadow-gold);
+    letter-spacing: 0.02em;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
 .btn-primary:hover {
-    background: var(--secondary-hover);
-    border-color: var(--secondary-hover);
-    transform: translateY(-1px);
-    box-shadow: 0 8px 25px rgba(225, 29, 72, 0.3);
+    background: var(--accent-gold-dark);
+    border-color: var(--accent-gold-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-gold-hover);
+}
+
+.btn-primary:active {
+    background: var(--accent-gold-dark);
+    box-shadow: var(--shadow-sm);
+    transform: translateY(0);
+}
+
+.btn-primary:focus-visible {
+    outline: 3px solid var(--accent-gold);
+    outline-offset: 4px;
 }
 
 .btn-secondary {
     background: transparent;
-    color: var(--secondary-color);
-    border: 2px solid var(--secondary-color);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
 }
 
 .btn-secondary:hover {
-    background: var(--secondary-color);
-    color: var(--text-white);
-    transform: translateY(-1px);
-    box-shadow: 0 8px 25px rgba(225, 29, 72, 0.3);
+    background: var(--primary-color);
+    color: var(--text-inverted);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-secondary:active {
+    background: var(--primary-hover);
+    border-color: var(--primary-hover);
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+.btn-secondary:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 4px;
 }
 
 .hero-image {
@@ -473,26 +719,11 @@ a:focus-visible {
 .hero-photo {
     width: 320px;
     height: 320px;
-    border-radius: 20px;
+    border-radius: var(--radius-lg);
     object-fit: cover;
     border: none;
     box-shadow: 0 20px 60px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
-    background: var(--bg-accent);
-}
-
-/* Fallback si l'image ne charge pas */
-.hero-photo::before {
-    content: "Photo d'Agathe";
-    position: absolute;
-    width: 320px;
-    height: 320px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-secondary);
-    font-size: 1rem;
-    border-radius: 20px;
     background: var(--bg-accent);
 }
 
@@ -515,24 +746,20 @@ a:focus-visible {
 
 /* Section Piliers - Style Minimaliste */
 .pillars {
-    padding: 120px 0;
+    padding: var(--section-padding-y) var(--section-padding-x);
     background: var(--bg-secondary);
     transition: background-color var(--transition-speed);
 }
 
 .pillars h2 {
     text-align: center;
-    font-size: 2.8rem;
-    font-weight: 300;
     margin-bottom: 80px;
-    color: var(--text-primary);
-    letter-spacing: -0.02em;
 }
 
 .pillars-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 60px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-xl);
     max-width: 1000px;
     margin: 0 auto;
 }
@@ -540,7 +767,7 @@ a:focus-visible {
 .pillar-card {
     background: var(--bg-primary);
     padding: 50px 40px;
-    border-radius: 16px;
+    border-radius: var(--radius-lg);
     text-align: center;
     transition: all var(--transition-speed);
     border: 1px solid var(--border-color);
@@ -549,8 +776,8 @@ a:focus-visible {
 
 .pillar-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 25px 50px rgba(0,0,0,0.1);
-    border-color: var(--secondary-color);
+    box-shadow: var(--shadow-gold-hover);
+    border-color: var(--accent-gold);
 }
 
 .pillar-icon {
@@ -563,7 +790,7 @@ a:focus-visible {
     font-size: 1.6rem;
     font-weight: 600;
     margin-bottom: 20px;
-    color: var(--text-primary);
+    color: var(--primary-color);
 }
 
 .pillar-card p {
@@ -574,24 +801,20 @@ a:focus-visible {
 
 /* Section Services - Style Minimaliste */
 .services {
-    padding: 120px 0;
+    padding: var(--section-padding-y) var(--section-padding-x);
     background: var(--bg-primary);
     transition: background-color var(--transition-speed);
 }
 
 .services h2 {
     text-align: center;
-    font-size: 2.8rem;
-    font-weight: 300;
     margin-bottom: 80px;
-    color: var(--text-primary);
-    letter-spacing: -0.02em;
 }
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-xl);
     max-width: 1100px;
     margin: 0 auto;
 }
@@ -599,7 +822,7 @@ a:focus-visible {
 .service-card {
     background: var(--bg-primary);
     padding: 45px 35px;
-    border-radius: 16px;
+    border-radius: var(--radius-lg);
     text-align: left;
     border: 1px solid var(--border-color);
     transition: all var(--transition-speed);
@@ -608,8 +831,8 @@ a:focus-visible {
 
 .service-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-    border-color: var(--secondary-color);
+    box-shadow: var(--shadow-gold-hover);
+    border-color: var(--accent-gold);
 }
 
 .service-icon {
@@ -623,7 +846,7 @@ a:focus-visible {
     font-size: 1.6rem;
     font-weight: 600;
     margin-bottom: 18px;
-    color: var(--text-primary);
+    color: var(--primary-color);
 }
 
 .service-card p {
@@ -632,9 +855,68 @@ a:focus-visible {
     font-size: 1.05rem;
 }
 
+/* Offre signature featured */
+.service-card-featured {
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+    border: 2px solid var(--primary-color);
+    grid-column: 1 / -1;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: var(--shadow-lg);
+}
+
+.service-card-featured:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(79, 70, 229, 0.15);
+}
+
+.service-badge {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--text-white);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+}
+
+.service-details {
+    background: var(--bg-accent);
+    border-left: 3px solid var(--accent-gold);
+    padding: 20px 25px;
+    margin: 25px 0;
+    border-radius: var(--radius-sm);
+}
+
+.service-details p {
+    margin: 8px 0;
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.service-card .btn-primary,
+.service-card .btn-secondary {
+    margin-top: 20px;
+    display: inline-block;
+}
+
+/* Hero offer line */
+.hero-offer {
+    font-size: 1.15rem;
+    color: var(--text-primary);
+    margin: 20px 0;
+    padding: 15px 25px;
+    background: var(--bg-accent);
+    border-left: 4px solid var(--accent-gold);
+    border-radius: var(--radius-sm);
+}
+
 /* Section À propos - Style Minimaliste */
 .about {
-    padding: 120px 0;
+    padding: var(--section-padding-y) var(--section-padding-x);
     background: var(--bg-secondary);
     transition: background-color var(--transition-speed);
 }
@@ -647,11 +929,7 @@ a:focus-visible {
 }
 
 .about-text h2 {
-    font-size: 2.8rem;
-    font-weight: 300;
     margin-bottom: 40px;
-    color: var(--text-primary);
-    letter-spacing: -0.02em;
 }
 
 .about-text p {
@@ -672,20 +950,20 @@ a:focus-visible {
     flex-direction: column;
     padding: 25px;
     background: var(--bg-primary);
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     border: 1px solid var(--border-color);
     transition: all 0.3s ease;
 }
 
 .credential:hover {
-    border-color: var(--secondary-color);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    border-color: var(--accent-gold);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-gold-hover);
 }
 
 .credential strong {
-    color: var(--secondary-color);
-    font-size: 1.1rem;
+    color: var(--accent-gold);
+    font-size: 1.15rem;
     margin-bottom: 8px;
     font-weight: 600;
 }
@@ -699,27 +977,11 @@ a:focus-visible {
 .about-photo {
     width: 420px;
     height: 420px;
-    border-radius: 20px;
+    border-radius: var(--radius-lg);
     object-fit: cover;
     box-shadow: 0 25px 60px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
     background: var(--bg-accent);
-    position: relative;
-}
-
-/* Fallback si l'image ne charge pas */
-.about-photo::before {
-    content: "Photo d'Agathe - À propos";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-secondary);
-    font-size: 1rem;
-    text-align: center;
-    border-radius: 12px;
 }
 
 .about-photo:hover {
@@ -731,23 +993,19 @@ a:focus-visible {
     height: 400px;
     background: var(--border-color);
     color: var(--text-secondary);
-    border-radius: 12px;
+    border-radius: var(--radius-md);
 }
 
 /* Section FAQ - Style Minimaliste */
 .faq {
-    padding: 120px 0;
+    padding: var(--section-padding-y) var(--section-padding-x);
     background: var(--bg-primary);
     transition: background-color var(--transition-speed);
 }
 
 .faq h2 {
     text-align: center;
-    font-size: 2.8rem;
-    font-weight: 300;
     margin-bottom: 80px;
-    color: var(--text-primary);
-    letter-spacing: -0.02em;
 }
 
 .faq-container {
@@ -760,6 +1018,10 @@ a:focus-visible {
     margin-bottom: 0;
 }
 
+.faq-item.active {
+    border-color: var(--accent-gold);
+}
+
 .faq-question {
     display: flex;
     justify-content: space-between;
@@ -769,8 +1031,8 @@ a:focus-visible {
     transition: all 0.3s ease;
 }
 
-.faq-question:hover {
-    color: var(--secondary-color);
+.faq-question:hover h3 {
+    color: var(--primary-color);
 }
 
 .faq-question h3 {
@@ -784,20 +1046,21 @@ a:focus-visible {
 }
 
 .faq-question:hover h3 {
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .faq-toggle {
     font-size: 1.5rem;
     font-weight: 300;
-    color: var(--secondary-color);
-    transition: transform 0.3s ease;
+    color: var(--accent-gold);
+    transition: transform 0.3s ease, color 0.3s ease;
     min-width: 30px;
     text-align: center;
 }
 
 .faq-item.active .faq-toggle {
     transform: rotate(45deg);
+    color: var(--primary-color);
 }
 
 .faq-answer {
@@ -821,14 +1084,13 @@ a:focus-visible {
 
 /* Section Témoignages */
 .testimonials {
-    padding: 100px 0;
-    background: var(--bg-dark);
-    color: var(--text-white);
+    padding: var(--section-padding-y) var(--section-padding-x);
+    background: var(--primary-color);
+    color: var(--text-inverted);
 }
 
 .testimonials h2 {
     text-align: center;
-    font-size: 2.5rem;
     margin-bottom: 60px;
 }
 
@@ -839,9 +1101,10 @@ a:focus-visible {
 }
 
 .testimonial {
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.12);
     padding: 40px;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
 }
 
@@ -854,6 +1117,8 @@ a:focus-visible {
 .testimonial-author strong {
     display: block;
     margin-bottom: 5px;
+    color: var(--accent-gold-light);
+    font-size: 1.1rem;
 }
 
 .testimonial-author span {
@@ -861,18 +1126,32 @@ a:focus-visible {
     font-size: 0.9rem;
 }
 
+/* Dark mode testimonials */
+[data-theme="dark"] .testimonials {
+    background: var(--bg-dark);
+}
+
+[data-theme="dark"] .testimonial {
+    background: rgba(91, 114, 230, 0.08);      /* Réduire le bleu */
+    border: 1px solid rgba(91, 114, 230, 0.2);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .testimonial-author strong {
+    color: var(--accent-gold-light);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);  /* Améliorer lisibilité */
+}
+
 /* Section Contact */
 .contact {
-    padding: 100px 0;
+    padding: var(--section-padding-y) var(--section-padding-x);
     background: var(--bg-secondary);
     transition: background-color var(--transition-speed);
 }
 
 .contact h2 {
     text-align: center;
-    font-size: 2.5rem;
     margin-bottom: 20px;
-    color: var(--text-primary);
 }
 
 .contact > .container > p {
@@ -916,7 +1195,7 @@ a:focus-visible {
 }
 
 .contact-item a:hover {
-    color: var(--secondary-color);
+    color: var(--accent-gold);
     text-decoration: underline;
 }
 
@@ -930,7 +1209,7 @@ a:focus-visible {
 .contact-form textarea {
     padding: 15px;
     border: 2px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: var(--radius-sm);
     font-family: inherit;
     font-size: 1rem;
     transition: border-color 0.3s ease;
@@ -940,29 +1219,68 @@ a:focus-visible {
 .contact-form textarea:focus {
     outline: none;
     border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(36, 56, 185, 0.1);
+}
+
+/* Valid state */
+.contact-form input:valid,
+.contact-form textarea:valid {
+    border-color: #10b981;
+}
+
+/* Invalid state */
+.contact-form input:invalid:not(:placeholder-shown),
+.contact-form textarea:invalid:not(:placeholder-shown) {
+    border-color: #ef4444;
+}
+
+/* Error message styles */
+.field-error {
+    color: #ef4444;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.field-error::before {
+    content: "⚠";
+    font-size: 1rem;
+}
+
+/* Disabled state for submit button */
+.contact-form button:disabled {
+    background: var(--text-tertiary);
+    cursor: not-allowed;
+    opacity: 0.6;
 }
 
 .contact-form button,
 .btn-primary {
     padding: 15px 30px;
-    background: var(--secondary-color);
-    color: var(--text-white);
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 600;
+    background: var(--accent-gold);
+    color: var(--text-inverted);
+    border: 2px solid var(--accent-gold);
+    border-radius: var(--radius-sm);
+    font-size: 1.125rem;
+    font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
     text-decoration: none;
     display: inline-block;
     text-align: center;
+    box-shadow: var(--shadow-gold);
+    letter-spacing: 0.02em;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
 .contact-form button:hover,
 .btn-primary:hover {
-    background: var(--secondary-hover);
-    transform: translateY(-1px);
-    box-shadow: 0 8px 25px rgba(225, 29, 72, 0.3);
+    background: var(--accent-gold-dark);
+    border-color: var(--accent-gold-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-gold-hover);
 }
 
 /* Footer */
@@ -985,7 +1303,7 @@ a:focus-visible {
     width: auto;
     opacity: 0.9;
     transition: opacity 0.3s ease;
-    /* Garde le logo en couleur rouge sur fond sombre */
+    filter: brightness(0) invert(1);
 }
 
 .footer-agapeo-logo:hover {
