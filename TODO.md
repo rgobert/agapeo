@@ -2,21 +2,36 @@
 
 ## ✅ Complété Récemment
 
+- [x] **[2026-01-12]** Finitions professionnelles v1.3.1 - 15 fixes implémentées
+- [x] **[2026-01-12]** Phase 1: 4 bugs critiques (mobile menu, variables, accessibilité)
+- [x] **[2026-01-12]** Phase 2: 5 systèmes de design standardisés
+- [x] **[2026-01-12]** Phase 3: 6 refinements interactions et polish
 - [x] **[2026-01-11]** Refonte DA premium - Palette bleu/doré/blanc poudré
 - [x] **[2026-01-11]** Adaptation dark mode avec nouvelle palette
 - [x] **[2026-01-11]** Validation contraste WCAG AA sur toutes sections
 
 ## Priorité Haute
 
-### Post-Refonte DA Premium
+### Post-Finitions v1.3.1
 
-- [ ] **Tester la nouvelle DA sur différents navigateurs** (Chrome, Firefox, Safari, Edge)
-- [ ] **Obtenir feedback client sur la nouvelle identité visuelle**
+- [ ] **Test Lighthouse complet** (viser score ≥95 toutes catégories)
+  - Performance
+  - Accessibility
+  - Best Practices
+  - SEO
+- [ ] **Tester sur différents navigateurs** (Chrome, Firefox, Safari, Edge)
+  - Navigation mobile fonctionnelle
+  - Theme toggle rotation
+  - Button ripple effects
+  - Form validation states
+- [ ] **Vérifier responsive** sur vrais devices
+  - Mobile : 320px - 768px
+  - Tablet : 769px - 1024px
+  - Desktop : 1025px+
+- [ ] **Obtenir feedback client sur DA + finitions**
   - Screenshots avant/après à présenter
   - Valider l'équilibre bleu/doré (40%/20%)
-  - Confirmer le choix du logo blanc sur footer (ou revenir au rouge ?)
-- [ ] **Test Lighthouse** après refonte (viser score ≥90 toutes catégories)
-- [ ] **Vérifier responsive** avec nouvelle palette (mobile, tablet, desktop)
+  - Tester interactions (hover, active, focus)
 
 ### Optimisations Images & Accessibilité
 
