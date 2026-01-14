@@ -1,0 +1,26 @@
+# Configuration Netlify pour site statique avec CMS
+[build]
+  # Pas de build command pour l'instant (site statique direct)
+  # Décommenter pour activer génération depuis markdown:
+  # command = "node scripts/build-html-from-content.js"
+
+  # Publier depuis la racine du projet
+  publish = "."
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# Pas de redirections nécessaires pour l'instant
+# Les fichiers admin/ doivent être accessibles directement
+
+[[headers]]
+  # Cache les assets statiques
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  # Ne pas cacher admin/ (toujours servir la dernière version)
+  for = "/admin/*"
+  [headers.values]
+    Cache-Control = "no-cache"
