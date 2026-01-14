@@ -2,6 +2,10 @@
 
 ## ✅ Complété Récemment
 
+- [x] **[2026-01-14]** Netlify CMS - Phase 1: Setup complet (admin/, content/, config)
+- [x] **[2026-01-14]** Netlify CMS - Phase 2: Script build + documentation complète
+- [x] **[2026-01-14]** Création 6 fichiers markdown avec frontmatter YAML
+- [x] **[2026-01-14]** Guide setup Netlify et guide utilisateur Agathe
 - [x] **[2026-01-12]** Finitions professionnelles v1.3.1 - 15 fixes implémentées
 - [x] **[2026-01-12]** Phase 1: 4 bugs critiques (mobile menu, variables, accessibilité)
 - [x] **[2026-01-12]** Phase 2: 5 systèmes de design standardisés
@@ -11,6 +15,32 @@
 - [x] **[2026-01-11]** Validation contraste WCAG AA sur toutes sections
 
 ## Priorité Haute
+
+### Netlify CMS - Phases Finales (v1.4.0)
+
+- [ ] **Phase 3: Déploiement Netlify** (30 min)
+  - Créer site Netlify depuis GitHub (rgobert/agapeo)
+  - Configurer build command: `node scripts/build-html-from-content.js` (optionnel)
+  - Activer Netlify Identity (invite only)
+  - Activer Git Gateway
+  - Configurer DNS custom domain (agapeo.co)
+- [ ] **Phase 4: Tests End-to-End** (30 min)
+  - Tester accès /admin
+  - Éditer chaque collection (Hero, Services, About, Testimonials, FAQ, Contact)
+  - Vérifier création commits Git automatiques
+  - Vérifier rebuild automatique du site
+  - Valider changements visibles sur site public
+- [ ] **Phase 5: Formation Cliente** (1h)
+  - Inviter Agathe sur Netlify Identity
+  - Session walkthrough interface CMS (30-45 min)
+  - Démonstration édition + publication
+  - Enregistrer vidéo tutoriel (optionnel)
+  - Handoff complet
+- [ ] **Merge branche feature dans master**
+  - Vérifier tous tests passent
+  - Merge avec --no-ff
+  - Cleanup branche feature
+  - Tag version v1.4.0
 
 ### Post-Finitions v1.3.1
 
@@ -97,4 +127,4 @@
 - Marquer les tâches complétées avec [x] et date
 - Ajouter de nouvelles tâches au fur et à mesure
 - **Consulter Journal.md** pour l'historique détaillé des modifications
-- **Dernière mise à jour** : 2026-01-11 (Refonte DA Premium v1.3.0)
+- **Dernière mise à jour** : 2026-01-14 (Netlify CMS v1.4.0 - Phases 1-2 complétées)
