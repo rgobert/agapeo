@@ -8,5 +8,22 @@
 </head>
 <body>
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+
+  <!-- Initialisation Identity Widget -->
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on('init', user => {
+        if (!user) {
+          window.netlifyIdentity.on('login', () => {
+            document.location.href = '/admin/';
+          });
+        }
+      });
+
+      window.netlifyIdentity.on('error', err => {
+        console.error('Identity error:', err);
+      });
+    }
+  </script>
 </body>
 </html>

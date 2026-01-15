@@ -149,6 +149,9 @@
     
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Netlify Identity Widget -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -456,6 +459,31 @@
             </div>
         </div>
     </footer>
+
+    <!-- Netlify Identity: Gestion invitations et redirections -->
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on('init', user => {
+          // Auto-detect invitation token in URL hash
+          const hash = window.location.hash;
+          if (hash && hash.includes('invite_token=')) {
+            window.netlifyIdentity.open();
+          }
+        });
+
+        // Redirect to admin after login
+        window.netlifyIdentity.on('login', user => {
+          console.log('User authenticated:', user.email);
+          setTimeout(() => {
+            window.location.href = '/admin/';
+          }, 500);
+        });
+
+        window.netlifyIdentity.on('error', err => {
+          console.error('Netlify Identity error:', err);
+        });
+      }
+    </script>
 
     <script src="script.js"></script>
 </body>
