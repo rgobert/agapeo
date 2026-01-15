@@ -1,0 +1,85 @@
+backend:
+  name: git-gateway
+  branch: master  # Branch principale
+
+media_folder: "images"  # Dossier pour uploads d'images
+public_folder: "/images"
+
+collections:
+  - name: "sections"
+    label: "Sections du Site"
+    files:
+      - label: "Hero - Page d'Accueil"
+        name: "hero"
+        file: "content/hero.md"
+        fields:
+          - {label: "Titre Principal", name: "title", widget: "string"}
+          - {label: "Sous-titre", name: "subtitle", widget: "text"}
+          - {label: "Texte Bouton CTA", name: "cta_text", widget: "string"}
+          - {label: "Lien Bouton CTA", name: "cta_link", widget: "string", default: "#contact"}
+          - {label: "Image Alt Text", name: "image_alt", widget: "string"}
+
+      - label: "Services"
+        name: "services"
+        file: "content/services.md"
+        fields:
+          - {label: "Titre Section", name: "title", widget: "string"}
+          - {label: "Introduction", name: "intro", widget: "text"}
+          - label: "Liste des Services"
+            name: "services_list"
+            widget: "list"
+            fields:
+              - {label: "Nom du Service", name: "name", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Prix (optionnel)", name: "price", widget: "string", required: false}
+              - {label: "Durée", name: "duration", widget: "string", required: false}
+
+      - label: "À Propos"
+        name: "about"
+        file: "content/about.md"
+        fields:
+          - {label: "Titre", name: "title", widget: "string"}
+          - {label: "Biographie Paragraphe 1", name: "bio_p1", widget: "text"}
+          - {label: "Biographie Paragraphe 2", name: "bio_p2", widget: "text"}
+          - label: "Certifications"
+            name: "certifications"
+            widget: "list"
+            fields:
+              - {label: "Nom Certification", name: "name", widget: "string"}
+              - {label: "Organisme", name: "org", widget: "string"}
+              - {label: "Année", name: "year", widget: "string"}
+
+      - label: "Témoignages"
+        name: "testimonials"
+        file: "content/testimonials.md"
+        fields:
+          - {label: "Titre Section", name: "title", widget: "string"}
+          - label: "Témoignages"
+            name: "testimonials_list"
+            widget: "list"
+            fields:
+              - {label: "Citation", name: "quote", widget: "text"}
+              - {label: "Auteur", name: "author", widget: "string"}
+              - {label: "Fonction", name: "role", widget: "string"}
+
+      - label: "FAQ"
+        name: "faq"
+        file: "content/faq.md"
+        fields:
+          - {label: "Titre Section", name: "title", widget: "string"}
+          - label: "Questions"
+            name: "questions"
+            widget: "list"
+            fields:
+              - {label: "Question", name: "q", widget: "string"}
+              - {label: "Réponse", name: "a", widget: "text"}
+
+      - label: "Contact"
+        name: "contact"
+        file: "content/contact.md"
+        fields:
+          - {label: "Titre", name: "title", widget: "string"}
+          - {label: "Description", name: "description", widget: "text"}
+          - {label: "Email", name: "email", widget: "string"}
+          - {label: "Téléphone", name: "phone", widget: "string"}
+          - {label: "Adresse", name: "address", widget: "text"}

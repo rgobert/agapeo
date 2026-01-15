@@ -20,6 +20,7 @@ Landing page moderne et responsive développée en **HTML5, CSS3 et JavaScript v
 
 - Design responsive (mobile/desktop)
 - Mode sombre/clair avec détection des préférences système
+- **Gestion de contenu (CMS)** : Interface Netlify CMS pour édition autonome
 - Animations fluides au scroll (IntersectionObserver)
 - Navigation mobile avec menu hamburger
 - FAQ interactive
@@ -40,6 +41,25 @@ python3 -m http.server 8000
 
 **Aucun build process** - le site fonctionne directement dans le navigateur.
 
+## Éditer le Contenu
+
+Le site utilise **Netlify CMS** pour permettre l'édition du contenu sans toucher au code.
+
+### Accès Admin
+
+1. Aller sur **https://agapeo.co/admin** (ou URL Netlify)
+2. Se connecter avec Netlify Identity
+3. Éditer les sections : Hero, Services, À Propos, Témoignages, FAQ, Contact
+4. Publier → Le site se met à jour automatiquement (1-2 min)
+
+**Guide complet** : Voir [docs/guide-utilisateur-agathe.md](docs/guide-utilisateur-agathe.md)
+
+### Pour les Développeurs
+
+- Fichiers markdown : `content/*.md` (avec frontmatter YAML)
+- Configuration CMS : `admin/config.yml`
+- Script build : `scripts/build-html-from-content.js`
+
 ## Structure du Projet
 
 ```
@@ -47,7 +67,22 @@ python3 -m http.server 8000
 ├── index.html              # Page principale
 ├── styles.css              # Styles avec variables CSS
 ├── script.js               # Modules JavaScript
-├── images/                 # Assets images
+├── admin/                  # Netlify CMS
+│   ├── index.html         # Interface admin
+│   └── config.yml         # Configuration collections
+├── content/               # Contenu markdown
+│   ├── hero.md
+│   ├── services.md
+│   ├── about.md
+│   ├── testimonials.md
+│   ├── faq.md
+│   └── contact.md
+├── scripts/               # Build scripts
+│   └── build-html-from-content.js
+├── docs/                  # Guides
+│   ├── netlify-setup.md
+│   └── guide-utilisateur-agathe.md
+├── images/                # Assets images
 ├── CLAUDE.md              # Documentation complète
 ├── TODO.md                # Liste des tâches
 ├── Journal.md             # Historique des modifications
