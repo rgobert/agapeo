@@ -18,8 +18,8 @@
 
     /* Texte - Élégant */
     --text-primary: #1A1A1A;         /* Quasi noir (contraste 14.8:1 sur blanc poudré) */
-    --text-secondary: #4A4A4A;       /* Gris foncé */
-    --text-tertiary: #6A6A6A;        /* Gris moyen */
+    --text-secondary: #4A4A4A;       /* Gris foncé (contraste 7.6:1) */
+    --text-tertiary: #5A5A5A;        /* Gris moyen (contraste 5.8:1 - WCAG AA) */
     --text-inverted: #FFFFFF;        /* Blanc */
     --text-white: #FFFFFF;
     --text-gold: #C0A27B;            /* Doré */
@@ -100,8 +100,8 @@
 
     /* Texte */
     --text-primary: #F5F5F5;         /* Blanc cassé */
-    --text-secondary: #D0D0D0;       /* Gris clair */
-    --text-tertiary: #A0A0A0;        /* Gris moyen */
+    --text-secondary: #D0D0D0;       /* Gris clair (bon contraste) */
+    --text-tertiary: #B5B5B5;        /* Gris moyen éclairci (WCAG AA sur fond sombre) */
     --text-inverted: #0F1419;        /* Noir bleuté */
     --text-white: #FFFFFF;
     --text-gold: #D4B68F;            /* Doré */
@@ -146,8 +146,8 @@
 
         /* Texte */
         --text-primary: #F5F5F5;
-        --text-secondary: #D0D0D0;
-        --text-tertiary: #A0A0A0;
+        --text-secondary: #D0D0D0;       /* Gris clair (bon contraste) */
+        --text-tertiary: #B5B5B5;        /* Gris moyen éclairci (WCAG AA sur fond sombre) */
         --text-inverted: #0F1419;
         --text-white: #FFFFFF;
         --text-gold: #D4B68F;
@@ -1112,18 +1112,21 @@ a:focus-visible {
     font-size: 1.1rem;
     margin-bottom: 20px;
     font-style: italic;
+    color: #FFFFFF; /* Blanc pur pour contraste WCAG sur fond bleu semi-transparent */
 }
 
 .testimonial-author strong {
     display: block;
     margin-bottom: 5px;
-    color: var(--accent-gold-light);
+    color: #FFFFFF; /* Blanc pur au lieu de doré pour meilleur contraste */
     font-size: 1.1rem;
+    font-weight: 600;
 }
 
 .testimonial-author span {
-    opacity: 0.8;
+    opacity: 0.95;
     font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.95); /* Améliorer contraste WCAG */
 }
 
 /* Dark mode testimonials */
@@ -1291,6 +1294,10 @@ a:focus-visible {
     text-align: center;
 }
 
+.footer p {
+    color: #FFFFFF; /* Forcer blanc pur pour contraste WCAG sur fond bleu */
+}
+
 .footer-content {
     display: flex;
     flex-direction: column;
@@ -1312,8 +1319,7 @@ a:focus-visible {
 
 .privacy-badge {
     font-size: 0.9rem;
-    color: var(--text-secondary);
-    opacity: 0.8;
+    color: rgba(255, 255, 255, 0.85); /* Blanc semi-transparent pour contraste WCAG sur fond bleu */
     margin-top: 10px;
 }
 
